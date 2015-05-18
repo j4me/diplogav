@@ -1,0 +1,125 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,  Winapi.DwmApi, ABOUT1,Unit3, Unit5,
+  Vcl.Buttons, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    StaticText1: TStaticText;
+    SpeedButton1: TSpeedButton;
+    Image1: TImage;
+
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+
+
+
+  private
+    { Private declarations }
+  public
+       count:integer;
+  end;
+
+var
+  Form1: TForm1;
+   pvAttribute: Integer;
+   iPercentage:integer;
+    i:integer;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit4;
+
+const
+
+ScreenWidth: LongInt = 800;
+ScreenHeight: LongInt = 800;
+
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+Form1.FormStyle:= fsNormal;
+   AboutBox1.ShowModal;
+
+end;
+
+
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+i:=1;
+Form1.FormStyle:= fsNormal;
+Form3.FormStyle:= fsStayOnTop;
+Form3.ShowModal;
+end;
+
+
+
+
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Form1.FormStyle:= fsNormal;
+  Form4.FormStyle:= fsStayOnTop;
+  Form4.ShowModal;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+   Form1.FormStyle:= fsStayOnTop;
+StaticText1.Caption :='Организация и работа оперативно-диспетчерской службы оператора связи';
+Statictext1.Font.Size :=38;
+Statictext1.Width :=640;
+Statictext1.Height :=380;
+BorderStyle := bsNone;
+ WindowState:=wsMaximized;
+ pvAttribute:= DWMFLIP3D_EXCLUDEABOVE;
+  if DwmCompositionEnabled then
+     DwmSetWindowAttribute(Handle, DWMWA_FLIP3D_POLICY, @pvAttribute, Sizeof(Integer));
+
+     scaled := true;
+if (screen.width <> ScreenWidth) then
+begin
+height := longint(height) * longint(screen.height) div ScreenHeight;
+width := longint(width) * longint(screen.width) div ScreenWidth;
+scaleBy(screen.width, ScreenWidth);
+end;
+end;
+
+
+
+
+
+
+
+
+
+
+procedure TForm1.Image1Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm1.SpeedButton1Click(Sender: TObject);
+begin
+close;
+end;
+
+end.

@@ -1,0 +1,173 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'Form6'
+  ClientHeight = 561
+  ClientWidth = 784
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 335
+    Top = 184
+    Width = 31
+    Height = 13
+    Caption = 'Label1'
+  end
+  object StaticText1: TStaticText
+    Left = 56
+    Top = 24
+    Width = 601
+    Height = 265
+    AutoSize = False
+    Caption = 'StaticText1'
+    TabOrder = 0
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 304
+    Top = 440
+    Width = 177
+    Height = 50
+    Caption = 'Button1'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object StaticText2: TStaticText
+    Left = 664
+    Top = 424
+    Width = 59
+    Height = 17
+    Caption = 'StaticText2'
+    TabOrder = 2
+  end
+  object CheckBox1: TCheckBox
+    Left = 60
+    Top = 147
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 3
+    Visible = False
+  end
+  object CheckBox2: TCheckBox
+    Left = 60
+    Top = 184
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 4
+    Visible = False
+  end
+  object CheckBox3: TCheckBox
+    Left = 60
+    Top = 223
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 5
+    Visible = False
+  end
+  object CheckBox4: TCheckBox
+    Left = 60
+    Top = 264
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 6
+    Visible = False
+  end
+  object CheckBox5: TCheckBox
+    Left = 60
+    Top = 312
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 7
+    Visible = False
+    StyleElements = [seFont, seClient]
+  end
+  object CheckBox6: TCheckBox
+    Left = 60
+    Top = 351
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 8
+    Visible = False
+  end
+  object CheckBox7: TCheckBox
+    Left = 60
+    Top = 387
+    Width = 700
+    Height = 50
+    Caption = 'CheckBox1'
+    TabOrder = 9
+    Visible = False
+  end
+  object StaticText3: TStaticText
+    Left = 664
+    Top = 464
+    Width = 59
+    Height = 17
+    Caption = 'StaticText3'
+    TabOrder = 10
+  end
+  object RadioButton1: TRadioButton
+    Left = 168
+    Top = 312
+    Width = 350
+    Height = 17
+    Caption = 'RadioButton1'
+    TabOrder = 11
+    Visible = False
+  end
+  object RadioButton2: TRadioButton
+    Left = 168
+    Top = 348
+    Width = 350
+    Height = 17
+    Caption = 'RadioButton2'
+    TabOrder = 12
+    Visible = False
+  end
+  object RadioButton3: TRadioButton
+    Left = 168
+    Top = 384
+    Width = 350
+    Height = 17
+    Caption = 'RadioButton3'
+    TabOrder = 13
+    Visible = False
+  end
+  object Button2: TButton
+    Left = 336
+    Top = 260
+    Width = 145
+    Height = 58
+    Caption = 'Button2'
+    TabOrder = 14
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 336
+    Top = 335
+    Width = 145
+    Height = 27
+    Caption = 'Button3'
+    TabOrder = 15
+    WordWrap = True
+    OnClick = Button3Click
+  end
+end

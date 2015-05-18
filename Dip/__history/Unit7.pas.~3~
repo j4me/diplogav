@@ -1,0 +1,1075 @@
+unit Unit7;
+
+interface
+
+uses
+ Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,  Winapi.DwmApi, Unit1,
+  Vcl.ExtCtrls ;
+
+type
+  TForm7 = class(TForm)
+    StaticText1: TStaticText;
+    Button1: TButton;
+    StaticText2: TStaticText;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
+    CheckBox7: TCheckBox;
+    StaticText3: TStaticText;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
+    Label1: TLabel;
+    Button2: TButton;
+    Button3: TButton;
+    procedure FormCreate(Sender: TObject);
+
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    s:integer;
+  sum:integer;
+  end;
+
+var
+  Form7: TForm7;
+  pvAttribute: Integer;
+  iPercentage:integer;
+
+implementation
+
+{$R *.dfm}
+const
+
+ScreenWidth: LongInt = 800;
+ScreenHeight: LongInt = 800;
+
+
+
+
+procedure TForm7.Button1Click(Sender: TObject);
+begin
+
+
+
+case s of
+1:
+begin
+if Radiobutton1.Checked then
+begin
+sum:=Sum+1;
+
+
+
+end;
+button1.Caption:='Далее';
+end;
+
+2:
+begin
+
+
+
+ StaticText3.Caption := inttostr(sum);
+ Radiobutton1.Visible:=false;
+  Radiobutton2.Visible:=false;
+ StaticText1.Caption:='Какие функции выполняет диспетчер, при решении задачи № 2:';
+ Statictext1.Font.Size :=35;
+
+
+  StaticText2.Caption := inttostr(s)+'/30';
+    CheckBox1.Visible:=true;
+  CheckBox1.Checked:=false;
+   CheckBox2.Visible:=true;
+    CheckBox2.Checked:=false;
+    CheckBox3.Visible:=true;
+    CheckBox3.Checked:=false;
+     CheckBox4.Visible:=true;
+     CheckBox4.Checked:=false;
+      CheckBox5.Visible:=true;
+      CheckBox5.Checked:=false;
+           CheckBox6.Visible:=false;
+       CheckBox6.Checked:=false;
+       CheckBox5.WordWrap:=true;
+
+
+
+     CheckBox1.Caption:='ведет техническую, учетную и отчетную документацию	в соответствии утвержденным перечнем;';
+     CheckBox2.Caption:='принимает экстренные меры  по предупреждению и устранению   аварийных ситуаций на ГЦТ;';
+     CheckBox3.Caption:='организует сбор аварийных бригад;';
+     CheckBox4.Caption:='контролирует выезд бригад и проведение аварийно-восстановительных работ;';
+     CheckBox5.Caption:='оперативно передает информацию об авариях на сетях связи руководству ГЦТ,' +#10+
+    ' ОДС  регионального центра управления сетями связи Филиала.';
+
+end;
+
+3:
+begin
+    if ((CheckBox2.Checked)and (CheckBox3.Checked) and (CheckBox4.Checked) and (CheckBox5.Checked)) then
+       sum:=Sum+1;
+     StaticText3.Caption := inttostr(sum);
+    StaticText2.Caption := inttostr(s)+'/30';
+    Radiobutton1.Checked:=False;
+    Radiobutton2.Checked:=False;
+      Radiobutton1.Caption:='нет;';
+      Radiobutton2.Caption:='да.';
+ StaticText1.Caption:='  Чрезвычайная ситуация (ЧС) – это обстановка на определенной территории, сложившаяся в результате аварии, опасного природного явления, катастрофы,' +' стихийного бедствия, которые могут повлечь или повлекли за собой человеческие жертвы, ущерб здоровью людей или окружающей природной среде, значительные материальные потери и нарушение жизнедеятельности людей:';
+ Statictext1.Font.Size :=35;
+end;
+
+4:
+  begin
+if Radiobutton2.Checked then
+     sum:=Sum+1;
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='За что несет ответственность диспетчерская служба:';
+Statictext1.Font.Size :=35;
+
+
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=true;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=true;
+CheckBox6.Checked:=false;
+
+     CheckBox1.Caption:='за достоверность, своевременность передачи и полноту собираемой и передаваемой информации;';
+     CheckBox2.Caption:='за целесообразность предпринимаемых ею мер по регулированию производства;';
+     CheckBox3.Caption:='только за достоверность, своевременность передачи и полноту собираемой и передаваемой информации;';
+     CheckBox4.Caption:='за оперативность в ликвидации простоев, неполадок и выполнение аварийных заказов;';
+     CheckBox5.Caption:='ни несет никакой ответственности;';
+     CheckBox6.Caption:='за своевременность оповещения лиц, ответственных за мероприятия.';
+
+end;
+
+5:
+begin
+
+
+     if ((CheckBox1.Checked)and (CheckBox2.Checked) and (CheckBox4.Checked) and (CheckBox6.Checked)) then
+
+     sum:=Sum+1;
+
+   Radiobutton1.Visible:=true;
+  Radiobutton2.Visible:=true;
+ StaticText1.Caption:='  Диспетчерская служба - это централизованная форма оперативного управления на'+' основе применения технических средств связи, сбора информации, ее обработки и осуществления оперативного контроля и регулирования производства:';
+ Statictext1.Font.Size :=35;
+
+
+  StaticText2.Caption := inttostr(s)+'/30';
+    CheckBox1.Visible:=false;
+  CheckBox1.Checked:=false;
+   CheckBox2.Visible:=false;
+    CheckBox2.Checked:=false;
+    CheckBox3.Visible:=false;
+    CheckBox3.Checked:=false;
+     CheckBox4.Visible:=false;
+     CheckBox4.Checked:=false;
+      CheckBox5.Visible:=false;
+      CheckBox5.Checked:=false;
+           CheckBox6.Visible:=false;
+       CheckBox6.Checked:=false;
+       CheckBox5.WordWrap:=false;
+       Radiobutton1.Checked:=False;
+       Radiobutton2.Checked:=False;
+       Radiobutton1.Caption:='да;';
+       Radiobutton2.Caption:='нет.';
+
+
+end;
+
+6:
+begin
+  if Radiobutton1.Checked then
+     sum:=Sum+1;
+       StaticText2.Caption := inttostr(s)+'/30';
+        StaticText3.Caption := inttostr(sum);
+    Radiobutton1.Checked:=False;
+    Radiobutton2.Checked:=False;
+    Radiobutton3.Checked:=False;
+    Radiobutton3.Visible:=True;
+      Radiobutton1.Caption:='7;';
+      Radiobutton2.Caption:='3;';
+      Radiobutton3.Caption:='5.';
+ StaticText1.Caption:='  Сколько выделяется типов объектов мониторинга:  ';
+end;
+
+7:
+begin
+      if Radiobutton2.Checked then
+     sum:=Sum+1;
+       StaticText2.Caption := inttostr(s)+'/30';
+        StaticText3.Caption := inttostr(sum);
+    Radiobutton1.Checked:=False;
+    Radiobutton2.Checked:=False;
+    Radiobutton3.Checked:=False;
+    Radiobutton3.Visible:=True;
+      Radiobutton1.Caption:='сборе;';
+      Radiobutton2.Caption:='планировании услуг;';
+      Radiobutton3.Caption:='управлении защитой информации.';
+ StaticText1.Caption:='  Общие задачи  Международного Союза Электросвязи (МСЭ-Т) по TMN состоят в: ';
+end;
+
+8:
+begin
+  if Radiobutton1.Checked then
+     sum:=Sum+1;
+      StaticText3.Caption := inttostr(sum);
+ Radiobutton1.Visible:=false;
+  Radiobutton2.Visible:=false;
+  Radiobutton3.Visible:=false;
+ StaticText1.Caption:=' 	Какие уровни содержит система мониторинга:';
+ Statictext1.Font.Size :=35;
+
+
+  StaticText2.Caption := inttostr(s)+'/30';
+    CheckBox1.Visible:=true;
+  CheckBox1.Checked:=false;
+   CheckBox2.Visible:=true;
+    CheckBox2.Checked:=false;
+    CheckBox3.Visible:=true;
+    CheckBox3.Checked:=false;
+     CheckBox4.Visible:=true;
+     CheckBox4.Checked:=false;
+      CheckBox5.Visible:=true;
+      CheckBox5.Checked:=false;
+           CheckBox6.Visible:=false;
+       CheckBox6.Checked:=false;
+
+
+
+
+     CheckBox1.Caption:='контроль за состоянием элементов;';
+     CheckBox2.Caption:='контроль за состоянием сети;';
+     CheckBox3.Caption:='контроль и управление обслуживанием;';
+     CheckBox4.Caption:='административное управление;';
+     CheckBox5.Caption:='все выше перечисленные.';
+
+end;
+
+9:
+begin
+         if CheckBox5.Checked then
+
+     sum:=Sum+1;
+
+       StaticText2.Caption := inttostr(s)+'/30';
+        StaticText3.Caption := inttostr(sum);
+    Radiobutton1.Checked:=False;
+    Radiobutton2.Checked:=False;
+    Radiobutton3.Checked:=False;
+
+      Radiobutton1.Caption:='5;';
+      Radiobutton2.Caption:='2;';
+      Radiobutton3.Caption:='4.';
+ StaticText1.Caption:='  Сколько уровней содержит система мониторинга по иерархическому принципу:    ';
+end;
+
+10:
+begin
+if Radiobutton3.Checked then
+     sum:=Sum+1;
+
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  В каких случаях составляется акт представителем предприятия:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='в случае отсутствия письменного согласия на проведение работ в охранной зоне линии связи или линии радиофикации;';
+CheckBox2.Caption:='по результатам работы по уточнению трассы кабельной линии связи или линии радиофикации;';
+CheckBox3.Caption:='в случае повреждения линий связи или линий радиофикации;';
+CheckBox4.Caption:='все выше перечисленные.';
+
+end;
+
+11:
+begin
+if CheckBox4.Checked then
+     sum:=Sum+1;
+StaticText1.Caption:='  Для квитирования, какого сообщения предназначена кнопка «Квитировать»:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='квитирование только нормальных сообщений;';
+Radiobutton2.Caption:='квитирование одного сообщения, выделенного в списке сообщений;';
+Radiobutton3.Caption:='квитирование всех сообщений.';
+end;
+
+12:
+ begin
+     if Radiobutton2.Checked then
+     sum:=Sum+1;
+         StaticText3.Caption := inttostr(sum);
+ Radiobutton1.Visible:=true;
+  Radiobutton2.Visible:=true;
+  Radiobutton3.Visible:=true;
+ StaticText1.Caption:='  Согласно аварийному алгоритму сигнал может пребывать в одном из 2х состояний:';
+ Statictext1.Font.Size :=35;
+
+
+  StaticText2.Caption := inttostr(s)+'/30';
+    CheckBox1.Visible:=false;
+  CheckBox1.Checked:=false;
+   CheckBox2.Visible:=false;
+    CheckBox2.Checked:=false;
+    CheckBox3.Visible:=false;
+    CheckBox3.Checked:=false;
+     CheckBox4.Visible:=false;
+     CheckBox4.Checked:=false;
+      CheckBox5.Visible:=false;
+      CheckBox5.Checked:=false;
+           CheckBox6.Visible:=false;
+       CheckBox6.Checked:=false;
+       CheckBox5.WordWrap:=false;
+       Radiobutton1.Checked:=False;
+       Radiobutton2.Checked:=False;
+       Radiobutton3.Checked:=False;
+       Radiobutton1.Caption:='«норма» или «авария»;';
+       Radiobutton2.Caption:='«КЗ» или «Обр»;';
+       Radiobutton3.Caption:='«Защ.» или «Откл.».';
+
+ end;
+
+ 13:
+begin
+ if Radiobutton1.Checked then
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  Какие типы пользователей имеются в комплексе  «ТЕХНОТРОНИКС. SQL»:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='Администратор;';
+CheckBox2.Caption:='Диспетчер;';
+CheckBox3.Caption:='Программист;';
+CheckBox4.Caption:='Оператор.';
+
+end;
+
+14:
+begin
+ if ((CheckBox1.Checked) and (CheckBox2.Checked) and (CheckBox4.Checked)) then
+     sum:=Sum+1;
+StaticText1.Caption:=' 	Что входит в состав программного обеспечения «ТЕХНОТРОНИКС.SQL»:';
+ Statictext1.Font.Size :=35;
+        StaticText3.Caption := inttostr(sum);
+
+  StaticText2.Caption := inttostr(s)+'/30';
+    CheckBox1.Visible:=true;
+  CheckBox1.Checked:=false;
+   CheckBox2.Visible:=true;
+    CheckBox2.Checked:=false;
+    CheckBox3.Visible:=true;
+    CheckBox3.Checked:=false;
+     CheckBox4.Visible:=true;
+     CheckBox4.Checked:=false;
+      CheckBox5.Visible:=true;
+      CheckBox5.Checked:=false;
+           CheckBox6.Visible:=false;
+       CheckBox6.Checked:=false;
+
+
+
+
+     CheckBox1.Caption:='«Опрос»;';
+     CheckBox2.Caption:='«Квитирование»;';
+     CheckBox3.Caption:='«Просмотр»;';
+     CheckBox4.Caption:='«Настройка»;';
+     CheckBox5.Caption:='все выше перечисленные.';
+   end;
+
+
+
+15:
+begin
+      if CheckBox5.Checked then
+
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+StaticText2.Caption := inttostr(s)+'/30';
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  Для просмотра, какой информации предназначено «окно дополнительной информации»:';
+Statictext1.Font.Size :=35;
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=true;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=true;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=true;
+CheckBox7.Width:=500;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='просмотр дополнительной информации о сигнале;';
+CheckBox2.Caption:='просмотр дополнительной информации о сигнале;';
+CheckBox3.Caption:='группе контроллеров;';
+CheckBox4.Caption:='о состоянии сигнала;';
+CheckBox5.Caption:='объектовом устройстве;';
+CheckBox6.Caption:='просмотр и заполнение журнала по сообщению;';
+CheckBox7.Caption:='о сбоях оборудования.';
+end;
+
+
+
+16:
+begin
+       if ((CheckBox1.Checked) and (CheckBox2.Checked) and (CheckBox3.Checked) and (CheckBox5.Checked) and (CheckBox6.Checked)) then
+sum:=Sum+1;
+     StaticText1.Caption:='  Что включает в себя 1ой тип объектов мониторинга:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='вторичные сети связи;';
+Radiobutton2.Caption:='среды распространения сигналов;';
+Radiobutton3.Caption:='первичные сети связи.';
+
+end;
+17:
+begin
+   if Radiobutton2.Checked then
+     sum:=Sum+1;
+     StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  Что наиболее важным является для третьего типа объектов мониторинга:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='система телефонной связи, включая подсистему сигнализации ОКС7 и абонентские каналы ISDN;';
+//ChechBox1.WrapText:=true;
+CheckBox2.Caption:='аналоговые каналы первичной сети;';
+CheckBox3.Caption:='потоки иерархий PDH и SDH.';
+
+end;
+18:
+begin
+    if ((CheckBox1.Checked) ) then
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  Кто из пользователей не имеет ограничений в правах доступа к данным:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='Диспетчер;';
+CheckBox2.Caption:='Оператор;';
+CheckBox3.Caption:='Администратор.';
+end;
+19:
+begin
+    if CheckBox3.Checked then
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+StaticText1.Caption:='  Сколько дочерних окон имеет приложение «Просмотр»:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Caption:='2;';
+Radiobutton2.Caption:='4;';
+Radiobutton3.Caption:='6.';
+
+
+end;
+20:
+begin
+       if Radiobutton2.Checked then
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  На какие типы могут быть разделены сообщения:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='об авариях групп контроллеров;';
+CheckBox2.Caption:='о системных сообщениях;';
+CheckBox3.Caption:='об объектовых устройствах.';
+
+end;
+
+21:
+begin
+  if ((CheckBox1.Checked) and (CheckBox2.Checked) ) then
+     sum:=Sum+1;
+     StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+StaticText1.Caption:='  Для чего применяется 2х битный контроль:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+CheckBox1.Caption:='для восстановления работы сигнала;';
+CheckBox2.Caption:='для проверки текущего состояния датчика;';
+CheckBox3.Caption:='для сигналов объектовых устройств.';
+end;
+22:
+begin
+   if ((CheckBox3.Checked) ) then
+     sum:=Sum+1;
+
+StaticText1.Caption:='  Гарантируемая  максимальная  протяженность  физической  пары проводов для УСИ 56Т СЛ:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='7км;';
+Radiobutton2.Caption:='3км;';
+Radiobutton3.Caption:='5км.';
+
+end;
+23:
+begin
+if Radiobutton2.Checked then
+     sum:=Sum+1;
+   StaticText1.Caption:='  Сколько внешних модулей расширения можно подключить к одному КУБу:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='14;';
+Radiobutton2.Caption:='10;';
+Radiobutton3.Caption:='16.';
+end;
+24:
+begin
+ if Radiobutton1.Checked then
+     sum:=Sum+1;
+StaticText1.Caption:='  Распределительный  статив ( РС)  предназначен  для  понижения  и стабилизации давления воздуха,'+' вырабатываемого блоком осушки КСУ-Э, распределения его по кабельным оболочкам, измерения расхода воздуха в  каждой  из'+'  них  и  автоматического  контроля  за  превышением допустимого предела этого расхода:';
+Statictext1.Font.Size :=25;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=false;
+Radiobutton1.Caption:='нет;';
+Radiobutton2.Caption:='да.';
+
+end;
+25:
+begin
+if Radiobutton2.Checked then
+     sum:=Sum+1;
+StaticText1.Caption:='  Для чего предназначен внешний модуль расширения МСИ485:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton2.WordWrap:=false;
+Radiobutton1.Caption:='для снятия показаний с водосчетчика и других приборов учета;';
+Radiobutton2.Caption:='для измерения напряжения на фазах трехфазного ввода, снятие показаний с электросчетчика;';
+Radiobutton3.Caption:='для измерения температуры и относительной влажности в помещении.';
+end;
+26:
+begin
+if Radiobutton1.Checked then
+     sum:=Sum+1;
+StaticText3.Caption := inttostr(sum);
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+StaticText1.Caption:='  Максимальная удалённость выносных блоков БИК от основного блока БИК составляет:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Caption:='70  метров;';
+Radiobutton2.Caption:='100  метров;';
+Radiobutton3.Caption:='50  метров.';
+
+end;
+27:
+begin
+if Radiobutton2.Checked then
+     sum:=Sum+1;
+
+
+StaticText1.Caption:='  Какие данные указываются в акте при повреждении линии связи или лини радиофикации (для юридических лиц):';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=False;
+Radiobutton2.Visible:=False;
+Radiobutton3.Visible:=False;
+CheckBox1.Caption:='название предприятия;';
+CheckBox2.Caption:='должность и ФИО (виновного);';
+CheckBox3.Caption:='характер, место и время происшествия;';
+CheckBox4.Caption:='все выше перечисленные.';
+end;
+28:
+begin
+if CheckBox4.Checked then
+     sum:=Sum+1;
+StaticText1.Caption:='  Сочетанием, каких клавиш можно открыть окно «Состояние направлений»:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='CRTL+F12;';
+Radiobutton2.Caption:='CRTL+F8;';
+Radiobutton3.Caption:='CRTL+F11.';
+end;
+29:
+begin
+if Radiobutton1.Checked then
+     sum:=Sum+1;
+StaticText1.Caption:='  Какие функции выполняет диспетчер, при решении задачи № 3:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=true;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=true;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=true;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=true;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=true;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=true;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+CheckBox1.Caption:='ведет техническую, учетную и отчетную документацию	в соответствии утвержденным перечнем;';
+CheckBox1.WordWrap:=true;
+CheckBox2.WordWrap:=true;
+CheckBox3.WordWrap:=true;
+CheckBox4.WordWrap:=true;
+CheckBox5.WordWrap:=true;
+CheckBox6.WordWrap:=true;
+CheckBox2.Caption:='формирует суточный  рапорт о состоянии сетей связи  и передает его руководству ГЦТ, ОДС РЦУСС;';
+CheckBox3.Caption:='контролирует выдачу ключей аварийной и охранной  бригаде при выезде на объект;';
+CheckBox4.Caption:='оповещает заинтересованных потребителей (подразделений) в случае проведения работ на сетях связи;';
+CheckBox5.Caption:='собирает и  анализирует информацию  о повреждениях на сетях связи;';
+CheckBox6.Caption:='принимает экстренные меры  по предупреждению и устранению   аварийных ситуаций на ГЦТ.';
+end;
+30:
+begin
+if ((CheckBox1.Checked) and (CheckBox2.Checked) and (CheckBox4.Checked) and (CheckBox5.Checked)) then
+     sum:=Sum+1;
+StaticText1.Caption:='  В каком окне осуществляется просмотр сводной информации о пребывании какого-либо сигнала в различных состояниях:';
+Statictext1.Font.Size :=35;
+StaticText2.Caption := inttostr(s)+'/30';
+StaticText3.Caption := inttostr(sum);
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=true;
+Radiobutton2.Visible:=true;
+Radiobutton3.Visible:=true;
+Radiobutton1.Caption:='«Статистика сигнала»;';
+Radiobutton2.Caption:='«Журнал горячей линии»;';
+Radiobutton3.Caption:='«Сигналы».';
+
+end;
+
+else
+begin
+ if Radiobutton1.Checked then
+     sum:=Sum+1;
+ StaticText1.Visible:=false;
+StaticText2.visible := false;
+StaticText3.visible := false;
+CheckBox1.Visible:=false;
+CheckBox1.Checked:=false;
+CheckBox2.Visible:=false;
+CheckBox2.Checked:=false;
+CheckBox3.Visible:=false;
+CheckBox3.Checked:=false;
+CheckBox4.Visible:=false;
+CheckBox4.Checked:=false;
+CheckBox5.Visible:=false;
+CheckBox5.Checked:=false;
+CheckBox6.Visible:=false;
+CheckBox6.Checked:=false;
+CheckBox7.Visible:=false;
+CheckBox7.Checked:=false;
+Radiobutton1.Checked:=False;
+Radiobutton2.Checked:=False;
+Radiobutton3.Checked:=False;
+Radiobutton1.Visible:=false;
+Radiobutton2.Visible:=false;
+Radiobutton3.Visible:=false;
+label1.Visible:=true;
+label1.Width:=500;
+label1.Font.Size:=40;
+label1.Caption:='Ты сдал на:'+inttostr(sum);
+button2.Visible:=true;
+button3.Visible:=true;
+button1.Visible:=false;
+button2.caption:='Выход';
+button3.caption:='Обнулить результат для пересдачи'+inttostr(s);
+  end;
+
+
+end;
+
+ s:=s+1;
+end;
+
+procedure TForm7.Button2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm7.Button3Click(Sender: TObject);
+begin
+
+form7.Show;
+s:=1;
+sum:=0;
+close;
+end;
+
+procedure TForm7.FormCreate(Sender: TObject);
+begin
+button1.Caption:='Готов?';
+sum:=0;
+s:=1;
+label1.Visible:=false;
+button2.Visible:=false;
+button3.Visible:=false;
+StaticText3.Caption := inttostr(0);
+   StaticText2.Caption := inttostr(s)+'/30';
+   Form7.FormStyle:= fsStayOnTop;
+   StaticText1.Visible:=true;
+   Radiobutton1.Visible:=true;
+   Radiobutton3.Visible:=false;
+   Radiobutton1.Width:=700;
+   Radiobutton2.Width:=700;
+   Radiobutton3.Width:=700;
+  Radiobutton2.Visible:=true;
+   StaticText1.Caption :='Компрессорно-сигнальная установка КСУ–10(15)Э-ИК предназначена для  выработки  сухого  воздуха,' + ' распределения  его  по  кабельным  оболочкам,  измерения расхода воздуха в каждой  из  них и автоматического контроля  за  превышением  допустимого  предела  этого  расхода:';
+   Statictext1.Font.Size :=25;
+    Statictext1.Width :=640;
+    Statictext1.Height :=480;
+    Radiobutton1.Caption:='да;';
+    Radiobutton2.Caption:='нет.';
+   BorderStyle := bsNone;
+ WindowState:=wsMaximized;
+ pvAttribute:= DWMFLIP3D_EXCLUDEABOVE;
+  if DwmCompositionEnabled then
+     DwmSetWindowAttribute(Handle, DWMWA_FLIP3D_POLICY, @pvAttribute, Sizeof(Integer));
+
+     scaled := true;
+if (screen.width <> ScreenWidth) then
+begin
+height := longint(height) * longint(screen.height) div ScreenHeight;
+width := longint(width) * longint(screen.width) div ScreenWidth;
+scaleBy(screen.width, ScreenWidth);
+end;
+end;
+
+
+
+end.

@@ -1,0 +1,64 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 772
+  ClientWidth = 1125
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StaticText1: TStaticText
+    Left = 120
+    Top = 256
+    Width = 59
+    Height = 17
+    Caption = 'StaticText1'
+    TabOrder = 0
+  end
+  object DBCheckBox1: TDBCheckBox
+    Left = 120
+    Top = 136
+    Width = 241
+    Height = 49
+    Caption = 'DBCheckBox1'
+    TabOrder = 1
+  end
+  object StaticText2: TStaticText
+    Left = 120
+    Top = 72
+    Width = 59
+    Height = 17
+    Caption = 'StaticText1'
+    TabOrder = 2
+  end
+  object DBCheckBox2: TDBCheckBox
+    Left = 120
+    Top = 336
+    Width = 241
+    Height = 49
+    Caption = 'DBCheckBox1'
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 248
+    Top = 504
+    Width = 233
+    Height = 57
+    Caption = 'Button1'
+    TabOrder = 4
+  end
+  object StaticText3: TStaticText
+    Left = 800
+    Top = 536
+    Width = 59
+    Height = 17
+    Caption = 'StaticText3'
+    TabOrder = 5
+  end
+end

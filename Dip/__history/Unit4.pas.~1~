@@ -1,0 +1,141 @@
+unit Unit4;
+
+interface
+
+uses
+ Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,  Winapi.DwmApi, Unit1,
+  Vcl.ExtCtrls ;
+
+type
+  TForm4 = class(TForm)
+    StaticText1: TStaticText;
+    Button1: TButton;
+    StaticText2: TStaticText;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
+    CheckBox7: TCheckBox;
+    StaticText3: TStaticText;
+    RadioButton1: TRadioButton;
+    RadioButton2: TRadioButton;
+    procedure FormCreate(Sender: TObject);
+
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+     pvAttribute: Integer;
+   iPercentage:integer;
+   s:integer;
+   sum:integer;
+implementation
+
+{$R *.dfm}
+const
+
+ScreenWidth: LongInt = 800;
+ScreenHeight: LongInt = 800;
+
+
+
+
+
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+
+
+
+case s of
+1:
+begin
+if Radiobutton1.Checked then
+begin
+     sum:=Sum+1;
+     StaticText3.Caption := inttostr(sum);
+        end
+else
+
+begin
+    sum:=Sum+3;
+    StaticText3.Caption := inttostr(sum);
+end;
+
+end;
+
+2:
+  begin
+  StaticText3.Caption := inttostr(sum);
+ Radiobutton1.Visible:=false;
+  Radiobutton2.Visible:=false;
+ StaticText1.Caption:='За что несет ответственность диспетчерская служба:';
+ Statictext1.Font.Size :=35;
+
+
+  StaticText2.Caption := inttostr(s)+'/30';
+  CheckBox1.Visible:=true;
+   CheckBox2.Visible:=true;
+    CheckBox3.Visible:=true;
+     CheckBox4.Visible:=true;
+      CheckBox5.Visible:=true;
+       CheckBox6.Visible:=true;
+
+     CheckBox1.Caption:='за достоверность, своевременность передачи и полноту собираемой и передаваемой информации;';
+     CheckBox2.Caption:='за целесообразность предпринимаемых ею мер по регулированию производства;';
+     CheckBox3.Caption:='только за достоверность, своевременность передачи и полноту собираемой и передаваемой информации;';
+     CheckBox4.Caption:='за оперативность в ликвидации простоев, неполадок и выполнение аварийных заказов;';
+     CheckBox5.Caption:='ни несет никакой ответственности;';
+     CheckBox6.Caption:='за своевременность оповещения лиц, ответственных за мероприятия.';
+     if ((checkbox1.Checked = true) and (checkbox2.Checked = true) and (checkbox4.Checked = true) and (checkbox6.Checked = true)) then
+                sum:=sum+1;
+end;
+3:StaticText1.Caption := 'GAVNO3'+inttostr(sum);
+4:StaticText1.Caption := 'GAVNO4';
+5:StaticText1.Caption := 'GAVNO5';
+else      StaticText1.Caption := 'AGON';
+end;
+
+ s:=s+1;
+end;
+
+procedure TForm4.FormCreate(Sender: TObject);
+begin
+sum:=0;
+s:=1;
+    StaticText2.Caption := inttostr(s)+'/30';
+   Form4.FormStyle:= fsStayOnTop;
+   StaticText1.Visible:=true;
+   Radiobutton1.Visible:=true;
+  Radiobutton2.Visible:=true;
+   StaticText1.Caption :='Диспетчерская служба - это централизованная форма оперативного управления на основе применения технических средств связи, сбора информации, ее обработки и осуществления оперативного контроля и регулирования производства:';
+   Statictext1.Font.Size :=25;
+    Statictext1.Width :=640;
+    Statictext1.Height :=480;
+
+   BorderStyle := bsNone;
+ WindowState:=wsMaximized;
+ pvAttribute:= DWMFLIP3D_EXCLUDEABOVE;
+  if DwmCompositionEnabled then
+     DwmSetWindowAttribute(Handle, DWMWA_FLIP3D_POLICY, @pvAttribute, Sizeof(Integer));
+
+     scaled := true;
+if (screen.width <> ScreenWidth) then
+begin
+height := longint(height) * longint(screen.height) div ScreenHeight;
+width := longint(width) * longint(screen.width) div ScreenWidth;
+scaleBy(screen.width, ScreenWidth);
+end;
+end;
+
+
+
+end.

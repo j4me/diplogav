@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.021,H:\ga\Dip\Unit4.dfm=H:\ga\Dip\Unit6.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.515,=H:\ga\Dip\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.021,H:\ga\Dip\Unit4.pas=H:\ga\Dip\Unit6.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,H:\ga\Dip\Unit4.dfm=H:\ga\Dip\Unit7.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.993,=C:\Users\ilyap_000\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,=D:\Projects\Delphi\dip2\Dip\О программе.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.758,=H:\ga\Dip\Unit5.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,H:\ga\Dip\Unit4.pas=H:\ga\Dip\Unit7.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.534,=D:\Projects\Delphi\Dip\Chapters\2.2.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.838,=D:\Projects\Delphi\dip2\Dip\Unit10.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.552,=D:\Projects\Delphi\Dip\Chapters\2.3.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.444,=D:\Projects\Delphi\Dip\Chapters\1.1.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,=H:\ga\Dip\ABOUT1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.826,=H:\ga\Dip\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.489,=D:\Projects\Delphi\Dip\Chapters\1.4.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.462,=D:\Projects\Delphi\Dip\Chapters\1.2.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.517,=D:\Projects\Delphi\Dip\Chapters\2.1.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.717,=H:\ga\Dip\ABOUT.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,=D:\Projects\Delphi\Dip\Chapters\1.5.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.445,D:\Projects\Delphi\dip2\Dip\Unit2.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.911,C:\Users\ilyap_000\Documents\Embarcadero\Studio\Projects\Project1.dproj=H:\ga\Dip\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.784,D:\Projects\Delphi\dip2\Dip\ABOUT.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,C:\Users\ilyap_000\Documents\Embarcadero\Studio\Projects\Unit1.dfm=H:\ga\Dip\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.573,=D:\Projects\Delphi\Dip\Chapters\2.4.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.468,=D:\Projects\Delphi\dip2\Dip\Unit8.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,C:\Users\ilyap_000\Documents\Embarcadero\Studio\Projects\Unit1.pas=H:\ga\Dip\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.916,=H:\ga\Dip\Unit3.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.931,=D:\Projects\Delphi\dip2\Dip\Unit9.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.476,=D:\Projects\Delphi\Dip\Chapters\1.3.rtf</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.672,D:\Projects\Delphi\dip2\Dip\ABOUT1.pas=</Transaction>
+  </Transactions>
+</BorlandProject>
